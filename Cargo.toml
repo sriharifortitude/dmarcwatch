@@ -1,0 +1,20 @@
+[package]
+name = "dmarcwatch"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.77"
+description = "Read DMARC aggregate reports and say which senders stand between a domain and p=reject."
+license = "MIT"
+repository = "https://github.com/sriharifortitude/dmarcwatch"
+readme = "README.md"
+keywords = ["dmarc", "email", "spf", "dkim", "security"]
+categories = ["command-line-utilities", "email"]
+
+[dependencies]
+quick-xml = "0.31"
+flate2 = { version = "1", default-features = false, features = ["rust_backend"] }
+zip = { version = "0.6", default-features = false, features = ["deflate"] }
+serde_json = "1"
+
+[profile.release]
+strip = true
